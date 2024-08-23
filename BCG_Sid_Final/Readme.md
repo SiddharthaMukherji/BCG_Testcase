@@ -40,6 +40,13 @@ The project is organized into modules and follows software engineering best prac
 - **Input data sources and output paths** are configured in `config.py`.
 - The code exclusively uses **PySpark's DataFrame API** (no Spark SQL).
 
+- This project has been tested on Windows using Git Bash, which provides a Unix-like environment. If you are using a MinGW terminal, you may need to modify the make commands to `mingw32-make` or the appropriate format. Since this is tested on Windows some steps regarding JDK and Hadoop might not be applicable or 
+could be different, but these steps are vigirously tested in Windows env. 
+
+-  The project has also been tested on macOS. If you are using a Linux-based operating system like macOS or other Linux distributions, steps 4, 5 and 6 may not be required. You can proceed directly to step 7, just ensure that Apache Spark is installed so you can run spark-submit. You can check the Spark version using `spark-submit --version` and install it using `brew install apache-spark` (on macOS) or the appropriate package manager for your Linux distribution.
+
+
+
 ## Setup and Execution
 
 ### Prerequisites
@@ -63,8 +70,15 @@ The project is organized into modules and follows software engineering best prac
    ```bash
    cd <project_directory>
    ```
+   
+3. **Open Terminal or Command Prompt:**
 
-3. **Open Git Bash.**
+   - **Windows:** You can use Git Bash, Command Prompt, or Windows Terminal.
+   - **macOS and Linux:** Use the built-in Terminal application.
+   - **IDEs:** If you are using an IDE like PyCharm or Visual Studio Code, you can open the terminal directly within the IDE.
+
+   **Important:** Before starting step 4, you may try skipping directly to step 7 and running the project. If you encounter issues, come back to steps 4-6 for troubleshooting. It is possible that you may not require some or any of these steps, especially if you are on a Linux-based system or macOS.
+
 
 4. **Set `JAVA_HOME`:**
 
@@ -127,10 +141,12 @@ The project is organized into modules and follows software engineering best prac
 
 ### Additional Notes
 
-- This project has been tested on Windows using Git Bash, which provides a Unix-like environment. If you are using a MinGW terminal, you may need to modify the make commands to `mingw32-make` or the appropriate format. Since this is tested on Windows some steps regarding JDK and Hadoop might not be applicable or 
-could be different, but these steps are vigirously tested in Windows env. 
 - See `make help` for a list of available commands.
 - Use `make clean` to remove generated files.
+
+**Alternative Installation Methods**
+
+If you prefer not to use the make commands or encounter any issues, you can install the required packages (PySpark, JDK, Hadoop) manually. Please refer to the  official documentation for each package for detailed installation instructions specific to your operating system.
 
 ## Test Results
 
